@@ -1,0 +1,51 @@
+{
+  "name": "react-native-sails.io-client",
+  "version": "1.0.0",
+  "description": "Javascript SDK for communicating w/ a Sails server via WebSockets/socket.io - Edited for RN",
+  "main": "react-native-sails.io-client",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "async": "2.0.1",
+    "fs-extra": "0.30.0",
+    "grunt": "1.0.1",
+    "grunt-cli": "1.2.0",
+    "grunt-contrib-clean": "1.0.0",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-uglify": "1.0.1",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-text-replace": "0.4.0",
+    "lodash": "3.10.1",
+    "mocha": "3.0.2",
+    "phantomjs-prebuilt": "2.1.12",
+    "request": "2.74.0",
+    "sails": "^1.0.0-16",
+    "sails-hook-sockets": "^1.2.3",
+    "socket.io-client": "1.7.1"
+  },
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha -b --reporter spec --timeout 10000",
+    "prepublish": "./node_modules/grunt-cli/bin/grunt publish",
+    "postpublish": "cd dist && npm publish && cd .. && echo && echo '--' && echo 'Now, assuming you have not pushed up your automatic \"npm version\" commit+tag yet, run:' && echo \"git tag -d v`npm show sails.io.js version` && git commit --amend -am '`npm show sails.io.js version`' && git tag v`npm show sails.io.js version`\" && echo 'Then do:' && echo 'git push && git push --tags'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/balderdashy/sails.io.js.git"
+  },
+  "keywords": [
+    "sails",
+    "sdk",
+    "sails.io.js",
+    "socket.io",
+    "browser",
+    "javascript"
+  ],
+  "author": "Mike McNeil <@mikermcneil> (http://balderdash.co/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/balderdashy/sails.io.js/issues"
+  },
+  "homepage": "https://github.com/balderdashy/sails.io.js"
+}
