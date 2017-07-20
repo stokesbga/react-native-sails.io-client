@@ -340,8 +340,9 @@
    * @returns {SailsIOClient} [also called `io`]
    */
 
-  function SailsIOClient(_providedSocketIO) {
+  function SailsIOClient(_providedSocketIO, oauthObject) {
 
+    this.oauthObject = oauthObject;
     // First, determine which `io` we're augmenting.
     //
     // Prefer the passed-in `io` instance, but fall back to the
@@ -1060,6 +1061,8 @@
         cb = data;
         data = {};
       }
+      
+      data = Object.assign(data, this.oauthObject);
 
       return this.request({
         method: 'get',
@@ -1088,6 +1091,8 @@
         cb = data;
         data = {};
       }
+      
+      data = Object.assign(data, this.oauthObject);
 
       return this.request({
         method: 'post',
@@ -1116,6 +1121,8 @@
         cb = data;
         data = {};
       }
+      
+      data = Object.assign(data, this.oauthObject);
 
       return this.request({
         method: 'put',
@@ -1143,6 +1150,8 @@
         cb = data;
         data = {};
       }
+      
+      data = Object.assign(data, this.oauthObject);
 
       return this.request({
         method: 'patch',
@@ -1169,6 +1178,8 @@
         cb = data;
         data = {};
       }
+      
+      data = Object.assign(data, this.oauthObject);
 
       return this.request({
         method: 'delete',
