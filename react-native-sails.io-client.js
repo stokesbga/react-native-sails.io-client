@@ -340,9 +340,8 @@
    * @returns {SailsIOClient} [also called `io`]
    */
 
-  function SailsIOClient(_providedSocketIO, oauthObject) {
+  function SailsIOClient(_providedSocketIO) {
 
-    this.oauthObject = oauthObject;
     // First, determine which `io` we're augmenting.
     //
     // Prefer the passed-in `io` instance, but fall back to the
@@ -1061,8 +1060,9 @@
         cb = data;
         data = {};
       }
-      
+
       data = Object.assign(data, this.oauthObject);
+      console.log(`GET SOCKET: ${JSON.stringify(data)}`);
 
       return this.request({
         method: 'get',
@@ -1091,7 +1091,7 @@
         cb = data;
         data = {};
       }
-      
+
       data = Object.assign(data, this.oauthObject);
 
       return this.request({
@@ -1121,7 +1121,7 @@
         cb = data;
         data = {};
       }
-      
+
       data = Object.assign(data, this.oauthObject);
 
       return this.request({
@@ -1150,7 +1150,7 @@
         cb = data;
         data = {};
       }
-      
+
       data = Object.assign(data, this.oauthObject);
 
       return this.request({
@@ -1178,7 +1178,7 @@
         cb = data;
         data = {};
       }
-      
+
       data = Object.assign(data, this.oauthObject);
 
       return this.request({
