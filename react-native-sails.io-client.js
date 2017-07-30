@@ -1060,8 +1060,6 @@
         cb = data;
         data = {};
       }
-
-      data = Object.assign(data, this.oauthObject);
       console.log(`GET SOCKET: ${JSON.stringify(data)}`);
 
       return this.request({
@@ -1092,8 +1090,6 @@
         data = {};
       }
 
-      data = Object.assign(data, this.oauthObject);
-
       return this.request({
         method: 'post',
         data: data,
@@ -1122,8 +1118,6 @@
         data = {};
       }
 
-      data = Object.assign(data, this.oauthObject);
-
       return this.request({
         method: 'put',
         params: data,
@@ -1151,8 +1145,6 @@
         data = {};
       }
 
-      data = Object.assign(data, this.oauthObject);
-
       return this.request({
         method: 'patch',
         params: data,
@@ -1178,8 +1170,6 @@
         cb = data;
         data = {};
       }
-
-      data = Object.assign(data, this.oauthObject);
 
       return this.request({
         method: 'delete',
